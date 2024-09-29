@@ -22,14 +22,16 @@ const App = () => {
       author: "Albert Einstein",
     },
   ];
-
-  const [quote, setQuote] = useState("");
+  // to generate random number at the start
+  const randomIndex = Math.floor(Math.random() * quoteGenerator.length);
+  // to initialise random object from quotegenerator using random number
+  const [quote, setQuote] = useState(quoteGenerator[randomIndex]);
 
   const randomQuoteGenerator = () => {
-    const randomQuote = Math.floor(Math.random() * quoteGenerator.length);
-    // const updatedQuote = [...quote,quoteGenerator[randomQuote] ]
-    // setQuote([updatedQuote]);
-    setQuote(quoteGenerator[randomQuote]);
+    // it gives index by math.random gives 0<x>1 and multiplies with length of quotegenerator. Math.floor will give the constant number
+    const randomIndex = Math.floor(Math.random() * quoteGenerator.length);
+
+    setQuote(quoteGenerator[randomIndex]);
   };
 
   // console.log(quote);
